@@ -1,0 +1,23 @@
+
+
+<div class="banner">
+<img src="http://www.cofounderslab.com/n/images/slider/CFL_HERO-Slide1_20130305.jpg" alt="my description for this image" width ="100%"/>
+</div>
+
+<div class="container">
+	<div id="filter">
+	  <div class="align_wrap">
+                <% @members.each do |member| %>
+                        <% if member.level == Member.pro %> 
+				<%= render :partial => 'member_large_show', :locals => {:member => member} %>
+                        <% else %>
+				<%= render :partial => 'member_small_show', :locals => {:member => member} %>
+			<% end %>
+                <% end %>
+	  </div>
+	</div>
+
+        <div class="clear"></div>
+</div>
+<div class="clear"></div>
+
